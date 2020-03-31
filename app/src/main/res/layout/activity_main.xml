@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/et_contactName"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/et_cellNumber"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_cellNumber"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Celular"
+        android:inputType="number"
+        app:layout_constraintBottom_toTopOf="@+id/btn_set"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_contactName" />
+
+    <Button
+        android:id="@+id/btn_erase"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="deleteContact"
+        android:text="Borrar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="100dp"
+        android:onClick="deleteContact"
+        android:text="cambiar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_erase" />
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:onClick="searchNumber"
+        android:text="Buscar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_erase"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_set" />
+
+    <Button
+        android:id="@+id/btn_set"
+        android:layout_width="338dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:onClick="setNumber"
+        android:text="Guardar"
+        app:layout_constraintBottom_toTopOf="@+id/btn_search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_cellNumber" />
+
+    <Button
+        android:id="@+id/clearNameBtn"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="136dp"
+        android:text="limpiar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_contactName"
+        app:layout_constraintStart_toEndOf="@+id/et_contactName"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/clearNumberBtn"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="Limpiar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/et_cellNumber"
+        app:layout_constraintBottom_toTopOf="@+id/btn_set"
+        app:layout_constraintStart_toEndOf="@+id/et_cellNumber"
+        app:layout_constraintTop_toBottomOf="@+id/clearNameBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>
