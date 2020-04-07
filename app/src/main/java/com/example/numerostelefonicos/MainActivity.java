@@ -2,7 +2,9 @@ package com.example.numerostelefonicos;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.MergeCursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -12,10 +14,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText et_name, et_number;
     Button clearNameBtn, clearNumberBtn;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
                 et_name.setText("");
             }
         });
+
+        floatingActionButton = findViewById(R.id.floatingActionButton);
+
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), NumbersList.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
+
 
     }
 
@@ -146,5 +166,4 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
 }
